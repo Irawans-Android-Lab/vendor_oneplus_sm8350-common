@@ -349,6 +349,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     libostatslog \
+    vendor.qti.diaghal-V1-ndk \
     btaudio_offload_if \
     eglSubDriverAndroid \
     libEGL_adreno \
@@ -652,7 +653,6 @@ PRODUCT_PACKAGES += \
     vendor.display.color@1.4 \
     vendor.display.color@1.5 \
     vendor.display.postproc@1.0 \
-    vendor.oplus.hardware.radio-V2-ndk_platform \
     vendor.qti.data.factory@2.0 \
     vendor.qti.data.factory@2.1 \
     vendor.qti.data.factory@2.2 \
@@ -819,11 +819,11 @@ PRODUCT_PACKAGES += \
     libwfduibcsrcinterface \
     vendor.oplus.hardware.displaypanelfeature@1.0 \
     vendor.qti.ImsRtpService-V1-ndk \
-    vendor.qti.diaghal-V1-ndk \
     vendor.qti.hardware.dpmaidlservice-V1-ndk \
     vendor.qti.hardware.dpmservice@1.0 \
     vendor.qti.hardware.wifidisplaysession@1.0 \
     vendor.qti.hardware.wifidisplaysession_aidl-V1-ndk \
+    vendor.qti.ims.datachannelservice-V1-ndk \
     vendor.qti.imsrtpservice@3.0 \
     vendor.qti.imsrtpservice@3.1 \
     libbluetooth_audio_extend_factory_client \
@@ -853,7 +853,6 @@ PRODUCT_PACKAGES += \
     vendor.oplus.hardware.communicationcenter_compat@1.0 \
     vendor.oplus.hardware.communicationcenter_compat@1.1 \
     vendor.oplus.hardware.ims@1.0 \
-    vendor.oplus.hardware.olc2-V1-ndk_platform \
     vendor.oplus.hardware.radio@1.0 \
     vendor.oplus.hardware.urcc-V1-ndk_platform \
     CACertService \
@@ -873,10 +872,23 @@ PRODUCT_PACKAGES += \
     com.android.hotwordenrollment.common.util \
     com.qti.dpmframework \
     dpmapi \
-    oplus-ims-ext \
     qcrilhook \
     vendor.qti.hardware.alarm-V1.0-java \
+    vendor.qti.ims.connection-V1.0-java \
+    vendor.qti.ims.connectionaidlservice-V1-java \
+    vendor.qti.ims.datachannelservice-V1-java \
     vendor.qti.ims.factory-V2.0-java \
+    vendor.qti.ims.factory-V2.1-java \
+    vendor.qti.ims.factory-V2.2-java \
+    vendor.qti.ims.factoryaidlservice-V1-java \
+    vendor.qti.ims.rcssip-V1.0-java \
+    vendor.qti.ims.rcssip-V1.1-java \
+    vendor.qti.ims.rcssip-V1.2-java \
+    vendor.qti.ims.rcssipaidlservice-V1-java \
+    vendor.qti.ims.rcsuce-V1.0-java \
+    vendor.qti.ims.rcsuce-V1.1-java \
+    vendor.qti.ims.rcsuce-V1.2-java \
+    vendor.qti.ims.rcsuceaidlservice-V1-java \
     android.hardware.gnss@2.1-service-qti.xml \
     c2_manifest_vendor.xml \
     vendor.qti.gnss@4.0-service.xml \
