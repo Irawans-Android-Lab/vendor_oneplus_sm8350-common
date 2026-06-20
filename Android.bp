@@ -17,6 +17,33 @@ soong_namespace {
 }
 
 cc_prebuilt_library_shared {
+    name: "libostatslog",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system/lib64/libostatslog.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libstatssocket",
+                "libstatspull",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+}
+
+cc_prebuilt_library_shared {
     name: "btaudio_offload_if",
     owner: "oneplus",
     strip: {
@@ -7195,46 +7222,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libcwb_sm8350",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libcwb_sm8350.so",
-            ],
-            shared_libs: [
-                "vendor.oplus.hardware.cwb@1.0",
-                "vendor.qti.hardware.display.allocator@4.0",
-                "vendor.qti.hardware.display.mapper@4.0",
-                "vendor.display.config@2.0",
-                "android.hardware.graphics.common@1.2",
-                "android.hardware.graphics.mapper@4.0",
-                "libhidlbase",
-                "libhidltransport",
-                "libhwbinder",
-                "libbinder",
-                "liblog",
-                "libcutils",
-                "libutils",
-                "libui",
-                "libdisplayconfig.qti",
-                "libqservice",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libdataitems",
     owner: "oneplus",
     strip: {
@@ -7276,34 +7263,6 @@ cc_prebuilt_library_shared {
             shared_libs: [
                 "libcutils",
                 "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libdisplayconfig.qti",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libdisplayconfig.qti.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libhidlbase",
-                "libutils",
-                "vendor.display.config@2.0",
                 "libc++",
                 "libc",
                 "libm",
@@ -7658,35 +7617,6 @@ cc_prebuilt_library_shared {
                 "libtinyxml2_1",
                 "libcutils",
                 "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libhistogram",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libhistogram.so",
-            ],
-            shared_libs: [
-                "libdrm",
-                "liblog",
-                "libcutils",
-                "libutils",
-                "libbase",
                 "libc++",
                 "libc",
                 "libm",
@@ -8481,71 +8411,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libpwirisfeature",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libpwirisfeature.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libhidlbase",
-                "vendor.pixelworks.hardware.feature@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libpwirishalwrapper",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libpwirishalwrapper.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
-                "libcutils",
-                "android.hardware.graphics.common@1.2",
-                "libhardware",
-                "libsdmcore",
-                "libqdMetaData",
-                "libpwirisfeature",
-                "libhidlbase",
-                "libhidltransport",
-                "vendor.pixelworks.hardware.display@1.0",
-                "vendor.pixelworks.hardware.display@1.1",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libqcbor",
     owner: "oneplus",
     strip: {
@@ -8909,36 +8774,6 @@ cc_prebuilt_library_shared {
                 "libfmq",
                 "libhidlbase",
                 "vendor.qti.hardware.qccsyshal@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libqdutils",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libqdutils.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libutils",
-                "libprocessgroup",
-                "libbinder",
-                "libqservice",
                 "libc++",
                 "libc",
                 "libm",
@@ -9324,38 +9159,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libsdedrm",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libsdedrm.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libprocessgroup",
-                "libdrm",
-                "libdrmutils",
-                "libdisplaydebug",
-                "libpwirisfeature",
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libsdm-color",
     owner: "oneplus",
     strip: {
@@ -9471,45 +9274,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libsdmcore",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libsdmcore.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libprocessgroup",
-                "libdisplaydebug",
-                "libsdmutils",
-                "libdrm",
-                "libdrmutils",
-                "libsdedrm",
-                "libxml2",
-                "libbase",
-                "libhidlbase",
-                "libhidltransport",
-                "vendor.pixelworks.hardware.display@1.0",
-                "libpwirisfeature",
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libsdmextension",
     owner: "oneplus",
     strip: {
@@ -9527,36 +9291,6 @@ cc_prebuilt_library_shared {
                 "libsdm-color",
                 "libdisplayskuutils",
                 "libtinyxml2_1",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libsdmutils",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/lib64/libsdmutils.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libutils",
-                "libprocessgroup",
-                "libdisplaydebug",
-                "libsync",
                 "libc++",
                 "libc",
                 "libm",
@@ -14190,6 +13924,8 @@ cc_prebuilt_library_shared {
                 "libhidlmemory",
                 "libc",
                 "libcutils",
+                "libbinder_ndk",
+                "vendor.qti.diaghal-V1-ndk",
                 "libc++",
                 "libm",
                 "libdl",
@@ -15098,6 +14834,34 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.oplus.hardware.displaypanelfeature@1.0",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.oplus.hardware.displaypanelfeature@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.qti.ImsRtpService-V1-ndk",
     owner: "oneplus",
     strip: {
@@ -15107,6 +14871,32 @@ cc_prebuilt_library_shared {
         android_arm64: {
             srcs: [
                 "proprietary/system_ext/lib64/vendor.qti.ImsRtpService-V1-ndk.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "android.hardware.common-V2-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.qti.diaghal-V1-ndk",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/lib64/vendor.qti.diaghal-V1-ndk.so",
             ],
             shared_libs: [
                 "libbinder_ndk",
@@ -15417,43 +15207,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.oplus.hardware.performance-V1-ndk_platform",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/odm/lib/vendor.oplus.hardware.performance-V1-ndk_platform.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/vendor.oplus.hardware.performance-V1-ndk_platform.so",
-            ],
-            shared_libs: [
-                "libbinder_ndk",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "both",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libaiboost_qnn_sr",
     owner: "oneplus",
     strip: {
@@ -15644,6 +15397,40 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libGaiaClient_vnd",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/libGaiaClient_vnd.so",
+            ],
+            shared_libs: [
+                "libjsoncpp_shim",
+                "libbase_shim",
+                "vendor.oplus.hardware.olc2-V1-ndk_platform",
+                "liblog",
+                "libcutils",
+                "libutils",
+                "libjsoncpp",
+                "libhidlbase",
+                "libhidltransport",
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libcommcenterfw",
     owner: "oneplus",
     strip: {
@@ -15739,6 +15526,7 @@ cc_prebuilt_library_shared {
                 "libhidlbase",
                 "libhidltransport",
                 "vendor.oplus.hardware.communicationcenter_compat@1.0",
+                "vendor.oplus.hardware.communicationcenter_compat@1.1",
                 "libcommcenterutils",
                 "libcutils",
                 "liblog",
@@ -15793,6 +15581,35 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "liboplus-uah-client",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/liboplus-uah-client.so",
+            ],
+            shared_libs: [
+                "vendor.oplus.hardware.urcc-V1-ndk_platform",
+                "libcutils",
+                "libutils",
+                "liblog",
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "liboplus_service",
     owner: "oneplus",
     strip: {
@@ -15830,7 +15647,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "libpwirisIoctlWrapper",
+    name: "libosenseaidlhalclient_charge",
     owner: "oneplus",
     strip: {
         none: true,
@@ -15838,285 +15655,15 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/odm/lib64/libpwirisIoctlWrapper.so",
+                "proprietary/odm/lib64/libosenseaidlhalclient_charge.so",
             ],
             shared_libs: [
-                "libdrm",
-                "liblog",
-                "libutils",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libpwirisPCS",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/libpwirisPCS.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libpwiriscalibrate",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/libpwiriscalibrate.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libutils",
-                "libpwsoftirisPCS",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libpwirisfeature_odm",
-    stem: "libpwirisfeature",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/libpwirisfeature.so",
-            ],
-            shared_libs: [
+                "vendor.oplus.hardware.osense.client-V1-ndk",
+                "libbase",
+                "libbinder_ndk",
                 "liblog",
                 "libutils",
                 "libcutils",
-                "libhidlbase",
-                "vendor.pixelworks.hardware.feature@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libpwirishalwrapper_odm",
-    stem: "libpwirishalwrapper",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/libpwirishalwrapper.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
-                "libcutils",
-                "android.hardware.graphics.common@1.2",
-                "libhardware",
-                "libsdmcore",
-                "libqdMetaData",
-                "libpwirisfeature",
-                "libhidlbase",
-                "libhidltransport",
-                "vendor.pixelworks.hardware.display@1.0",
-                "vendor.pixelworks.hardware.display@1.1",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libpwirispq",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/libpwirispq.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libpwirisservice",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/libpwirisservice.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
-                "libcutils",
-                "libqdMetaData",
-                "libgrallocutils",
-                "android.hardware.graphics.common@1.2",
-                "libpwirisIoctlWrapper",
-                "libpwirispq",
-                "libpwirisPCS",
-                "libhardware",
-                "libbinder",
-                "libsdmcore",
-                "libqservice",
-                "libpwirissoft",
-                "libpwiriscalibrate",
-                "libpwsoftirisPCS",
-                "libsnapdragoncolor-pxlw",
-                "libhidlbase",
-                "libhidltransport",
-                "vendor.pixelworks.hardware.display@1.0",
-                "vendor.pixelworks.hardware.display@1.1",
-                "vendor.pixelworks.hardware.feature@1.0",
-                "libpwirisfeature",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libpwirissoft",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/libpwirissoft.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libhardware",
-                "libsnapdragoncolor-pxlw",
-                "vendor.pixelworks.hardware.display@1.1",
-                "android.hardware.graphics.common@1.1",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libpwsoftirisPCS",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/libpwsoftirisPCS.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    prefer: true,
-    device_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libsnapdragoncolor-pxlw",
-    owner: "oneplus",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/odm/lib64/libsnapdragoncolor-pxlw.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libcutils",
-                "libutils",
                 "libc++",
                 "libc",
                 "libm",
@@ -16227,6 +15774,59 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.oplus.hardware.charger-V6-ndk_platform",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/vendor.oplus.hardware.charger-V6-ndk_platform.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.oplus.hardware.charger@1.0",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/vendor.oplus.hardware.charger@1.0.so",
+            ],
+            shared_libs: [
+                "libhidlbase",
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.oplus.hardware.communicationcenter_compat@1.0",
     owner: "oneplus",
     strip: {
@@ -16255,7 +15855,7 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "vendor.oplus.hardware.cwb@1.0",
+    name: "vendor.oplus.hardware.communicationcenter_compat@1.1",
     owner: "oneplus",
     strip: {
         none: true,
@@ -16263,9 +15863,10 @@ cc_prebuilt_library_shared {
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/odm/lib64/vendor.oplus.hardware.cwb@1.0.so",
+                "proprietary/odm/lib64/vendor.oplus.hardware.communicationcenter_compat@1.1.so",
             ],
             shared_libs: [
+                "vendor.oplus.hardware.communicationcenter_compat@1.0",
                 "libhidlbase",
                 "liblog",
                 "libutils",
@@ -16311,6 +15912,31 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "vendor.oplus.hardware.olc2-V1-ndk_platform",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/vendor.oplus.hardware.olc2-V1-ndk_platform.so",
+            ],
+            shared_libs: [
+                "libbinder_ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "vendor.oplus.hardware.radio@1.0",
     owner: "oneplus",
     strip: {
@@ -16326,6 +15952,33 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libutils",
                 "libcutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    device_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "vendor.oplus.hardware.urcc-V1-ndk_platform",
+    owner: "oneplus",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/odm/lib64/vendor.oplus.hardware.urcc-V1-ndk_platform.so",
+            ],
+            shared_libs: [
+                "libjsoncpp_shim",
+                "libbinder_ndk",
+                "libjsoncpp",
                 "libc++",
                 "libc",
                 "libm",
@@ -16397,9 +16050,9 @@ android_app_import {
 }
 
 android_app_import {
-    name: "HotwordEnrollmentOKGoogle",
+    name: "HotwordEnrollmentXGoogleHEXAGON_WIDEBAND",
     owner: "oneplus",
-    apk: "proprietary/product/priv-app/HotwordEnrollmentOKGoogle/HotwordEnrollmentOKGoogle.apk",
+    apk: "proprietary/product/priv-app/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND/HotwordEnrollmentXGoogleHEXAGON_WIDEBAND.apk",
     certificate: "platform",
     dex_preopt: {
         enabled: false,
@@ -16409,9 +16062,9 @@ android_app_import {
 }
 
 android_app_import {
-    name: "HotwordEnrollmentXGoogle",
+    name: "HotwordEnrollmentYGoogleHEXAGON_WIDEBAND",
     owner: "oneplus",
-    apk: "proprietary/product/priv-app/HotwordEnrollmentXGoogle/HotwordEnrollmentXGoogle.apk",
+    apk: "proprietary/product/priv-app/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND/HotwordEnrollmentYGoogleHEXAGON_WIDEBAND.apk",
     certificate: "platform",
     dex_preopt: {
         enabled: false,
@@ -16598,27 +16251,9 @@ prebuilt_etc_xml {
 }
 
 prebuilt_etc_xml {
-    name: "manifest_oplus_cwb.xml",
+    name: "manifest_oplus_charger_aidl.xml",
     owner: "oneplus",
-    src: "proprietary/odm/etc/vintf/manifest/manifest_oplus_cwb.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    device_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "vendor.pixelworks.hardware.display.iris-service.xml",
-    owner: "oneplus",
-    src: "proprietary/odm/etc/vintf/manifest/vendor.pixelworks.hardware.display.iris-service.xml",
-    filename_from_src: true,
-    sub_dir: "vintf/manifest",
-    device_specific: true,
-}
-
-prebuilt_etc_xml {
-    name: "vendor.pixelworks.hardware.feature.irisfeature-service.xml",
-    owner: "oneplus",
-    src: "proprietary/odm/etc/vintf/manifest/vendor.pixelworks.hardware.feature.irisfeature-service.xml",
+    src: "proprietary/odm/etc/vintf/manifest/manifest_oplus_charger_aidl.xml",
     filename_from_src: true,
     sub_dir: "vintf/manifest",
     device_specific: true,
@@ -17212,72 +16847,6 @@ cc_prebuilt_binary {
                 "libhidlbase",
                 "libxml2",
                 "vendor.qti.hardware.capabilityconfigstore@1.0",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "64",
-    strip: {
-        none: true,
-    },
-    prefer: true,
-    relative_install_path: "hw",
-    soc_specific: true,
-}
-
-cc_prebuilt_binary {
-    name: "vendor.qti.hardware.display.composer-service",
-    owner: "oneplus",
-    target: {
-        android_arm64: {
-            srcs: [
-                "proprietary/vendor/bin/hw/vendor.qti.hardware.display.composer-service",
-            ],
-            shared_libs: [
-                "libcwb_sm8350",
-                "vendor.oplus.hardware.cwb@1.0",
-                "libprocessgroup",
-                "libbase",
-                "libbinder",
-                "libhardware",
-                "libhistogram",
-                "libutils",
-                "libcutils",
-                "libsync",
-                "libhidlbase",
-                "liblog",
-                "libfmq",
-                "libhardware_legacy",
-                "libsdmcore",
-                "libqservice",
-                "libqdutils",
-                "libqdMetaData",
-                "libdisplaydebug",
-                "libsdmutils",
-                "libui",
-                "libgrallocutils",
-                "libgpu_tonemapper",
-                "libEGL",
-                "libGLESv2",
-                "libGLESv3",
-                "vendor.qti.hardware.display.composer@3.0",
-                "android.hardware.graphics.composer@2.1",
-                "android.hardware.graphics.composer@2.2",
-                "android.hardware.graphics.composer@2.3",
-                "android.hardware.graphics.composer@2.4",
-                "android.hardware.graphics.mapper@2.0",
-                "android.hardware.graphics.mapper@2.1",
-                "android.hardware.graphics.mapper@3.0",
-                "android.hardware.graphics.allocator@2.0",
-                "android.hardware.graphics.allocator@3.0",
-                "libdisplayconfig.qti",
-                "libdrm",
-                "vendor.pixelworks.hardware.display@1.1",
-                "libpwirishalwrapper",
-                "libpwirisfeature",
                 "libc++",
                 "libc",
                 "libm",
@@ -18855,6 +18424,50 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
+    name: "horae",
+    owner: "oneplus",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/system_ext/bin/horae",
+            ],
+            shared_libs: [
+                "vendor.oplus.hardware.performance-V1-ndk",
+                "liblog",
+                "libcutils",
+                "libcrypto",
+                "libbinder",
+                "libutils",
+                "libhidlbase",
+                "libhidltransport",
+                "libhwbinder",
+                "libbase",
+                "libnl",
+                "android.hardware.health@1.0",
+                "android.hardware.health@2.0",
+                "libbinder_ndk",
+                "vendor.oplus.hardware.charger-V1-ndk",
+                "libprotobuf-cpp-lite-21.7",
+                "libostatslog",
+                "android.hardware.health-V1-ndk",
+                "vendor.oplus.hardware.displaypanelfeature@1.0",
+                "vendor.oplus.hardware.displaypanelfeature-V1-ndk",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
+    system_ext_specific: true,
+}
+
+cc_prebuilt_binary {
     name: "tcmd",
     owner: "oneplus",
     target: {
@@ -18959,28 +18572,34 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-    name: "vendor.pixelworks.hardware.display.iris-service",
+    name: "vendor.oplus.hardware.charger-V6-service",
     owner: "oneplus",
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/odm/bin/hw/vendor.pixelworks.hardware.display.iris-service",
+                "proprietary/odm/bin/hw/vendor.oplus.hardware.charger-V6-service",
             ],
             shared_libs: [
-                "libprocessgroup",
+                "libjsoncpp_shim",
+                "libbase_shim",
+                "libcutils",
+                "libhidlbase",
+                "libbinder_ndk",
                 "liblog",
                 "libutils",
-                "libcutils",
-                "libqdMetaData",
-                "libhardware",
-                "libsdmcore",
-                "libhidlbase",
-                "libhidltransport",
-                "vendor.pixelworks.hardware.display@1.1",
-                "libpwirisservice",
+                "libbase",
+                "libbinder",
+                "android.frameworks.sensorservice@1.0",
+                "android.hardware.sensors@1.0",
+                "libsensorndkbridge",
+                "libm",
+                "vendor.oplus.hardware.charger-V6-ndk",
+                "vendor.oplus.hardware.osense.client-V1-ndk",
+                "libosenseaidlhalclient_charge",
+                "libjsoncpp",
+                "libGaiaClient_vnd",
                 "libc++",
                 "libc",
-                "libm",
                 "libdl",
             ],
         },
@@ -18995,26 +18614,19 @@ cc_prebuilt_binary {
 }
 
 cc_prebuilt_binary {
-    name: "vendor.pixelworks.hardware.feature.irisfeature-service",
+    name: "wlschgd",
     owner: "oneplus",
     target: {
         android_arm64: {
             srcs: [
-                "proprietary/odm/bin/hw/vendor.pixelworks.hardware.feature.irisfeature-service",
+                "proprietary/odm/bin/hw/wlschgd",
             ],
             shared_libs: [
-                "liblog",
-                "libutils",
                 "libcutils",
-                "libhardware",
-                "libbinder",
-                "libhidlbase",
-                "libhidltransport",
-                "vendor.pixelworks.hardware.display@1.0",
-                "vendor.pixelworks.hardware.feature@1.0",
-                "libpwirisIoctlWrapper",
-                "libc++",
+                "liblog",
                 "libc",
+                "libbase",
+                "libc++",
                 "libm",
                 "libdl",
             ],
